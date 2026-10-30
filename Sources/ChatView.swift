@@ -76,7 +76,7 @@ struct ChatView: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 8) {
                         ForEach(pendingImages.indices, id: \.self) { i in
-                            thumb(pendingImages[i], onDelete: { withAnimation(spring) { pendingImages.remove(at: i) } })
+                            thumb(pendingImages[i], onDelete: { withAnimation(spring) { pendingImages.removeSubrange(i...i) } })
                         }
                     }
                     .padding(.horizontal, 12)

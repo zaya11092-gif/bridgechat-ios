@@ -1,0 +1,29 @@
+name: BridgeChat
+options:
+  bundleIdPrefix: com.bridgechat
+  deploymentTarget:
+    iOS: "16.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    TARGETED_DEVICE_FAMILY: "1,2"
+targets:
+  BridgeChat:
+    type: application
+    platform: iOS
+    sources:
+      - Sources
+    info:
+      path: Sources/Info.plist
+      properties:
+        CFBundleDisplayName: BridgeChat
+        UILaunchScreen: {}
+        NSLocationWhenInUseUsageDescription: Shares your current location with the AI when you enable it in Settings.
+        NSCalendarsUsageDescription: Shares your next 7 days of calendar events with the AI when you enable it in Settings.
+        NSCalendarsFullAccessUsageDescription: Shares your next 7 days of calendar events with the AI when you enable it in Settings.
+schemes:
+  BridgeChat:
+    build:
+      targets:
+        BridgeChat: all
